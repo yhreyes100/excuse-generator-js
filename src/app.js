@@ -22,6 +22,10 @@ document.getElementById("startworker").onclick = function() {
   }
 };
 document.getElementById("stoptworker").onclick = function() {
-  w.terminate();
-  w = undefined;
+  if (w != undefined) {
+    w.terminate();
+    w = undefined;
+    document.getElementById("result").innerHTML =
+      " If this text is <b>not</b> centered and <b>yellow</b>, you probably have an error";
+  }
 };
